@@ -1,0 +1,16 @@
+{
+	"name": "localhost-ott",
+	"version": "1.0.0",
+	"description": "localhost ott server",
+	"main": "index.js",
+	"scripts": {
+		"dev": "node server.js"
+	},
+	"author": "dheerusuthar@gmail.com",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"serve-index": "^1.9.1"
+	}
+}
