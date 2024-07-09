@@ -5,6 +5,15 @@ function getSizeInGB(stats) {
 	return size;
 }
 
+function removeSpecialCharsAndExtension(filename) {
+	if (!filename) {
+		return;
+	}
+	filename = filename.replace(/\.[^/.]+$/, "");
+	return filename.replace(/[._-]/g, " ");
+}
+
 module.exports = {
 	getSizeInGB,
+	removeSpecialCharsAndExtension,
 };
