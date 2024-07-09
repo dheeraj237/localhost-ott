@@ -1,6 +1,6 @@
-# localhost-ott
+# Local OTT Player
 
-Your own home network OTT player. This project allows you to stream and manage your movie collection over your home network. Built with Node.js and Express, it provides a simple yet powerful way to turn your movie directory into a personal OTT platform.
+Your own home network OTT player. This project allows you to stream and manage your movie collection over your home network. Built with React, Node.js, Express, and Tailwind CSS, it provides a simple yet powerful way to turn your movie directory into a personal OTT platform.
 
 ### Stream Anywhere at Home: Easily watch your favorite movies from your laptop on any device—be it your TV, tablet, or smartphone—right over your home's WiFi. No cables, no hassle.
 ### Your Movies, Everywhere: Transform your home into a cinema where your movie collection follows you, seamlessly streaming from your laptop to any screen in the house.
@@ -58,7 +58,7 @@ Replace `/path/to/your/movies/in/your/system` with the actual path to your movie
 Once you have configured the environment variable, you can start the server:
 
 ```sh
-npm run dev
+npm run ott
 ```
 
 Your OTT platform will now be running at `http://localhost:3008`. Enjoy streaming your movie collection!
