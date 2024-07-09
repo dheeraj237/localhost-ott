@@ -7,14 +7,27 @@ Your own home network OTT player. This project allows you to stream and manage y
 
 ## Features
 
-- **Local Movie Streaming**: Stream movies from your local storage directly to any device on your home network.
-- **Automatic Movie Listing**: Automatically scans a specified directory for movies and lists them for streaming.
-- **Dynamic Content Serving**: Utilizes Express to serve movie content dynamically. Supports streaming to various devices with appropriate MIME type handling.
-- **Pagination and Search**: Offers an API endpoint for listing movies with support for pagination and search functionality. This makes it easy to find the movies you want to watch.
-- **Scheduled Scanning**: The server periodically rescans the movie directory to update the movie list, ensuring that new additions are automatically included without manual intervention.
-- **Static File Serving**: Serves the front-end HTML file and enables browsing of movie directories with file icons for an enhanced user experience.
-- **Environment Variable Configuration**: Configurable movie directory path through environment variables, allowing for flexible deployment and management.
-- **Lightweight and Fast**: Built with efficiency in mind, ensuring fast load times and minimal resource usage on your home server.
+This project, a local OTT (Over-the-Top) streaming server, offers a variety of features for hosting and streaming your personal movie collection. Here's what you can do with it:
+
+- **Environment Configuration**: Easily configure your environment to specify the directory where your movies are stored using a `.env` file. This allows the application to locate and stream your movies seamlessly.
+
+- **Movie Streaming**: Stream your movie collection directly from your local server. The server supports various video formats like MP4, AVI, and WEBM, ensuring broad compatibility with different types of video content.
+
+- **Directory Explorer**: YOu can browse your movie collection through a directory explorer that displays all the movies in your base directory, making it easy to find and stream your favorite films.
+
+- **Video Format Compatibility Check**: Automatically filters out incompatible video files (e.g., MKV format) to ensure a smooth streaming experience.
+
+- **Video Conversion Script**: Includes a script to convert incompatible video files (MKV) to a compatible format (MP4), enhancing the compatibility of your movie collection with the streaming platform.
+
+- **Responsive Web Interface**: Comes with a responsive web interface built with Bootstrap, allowing you to browse and stream your movies on various devices.
+
+- **Real-time Directory and File Information**: Displays real-time information about the current directory, number of movies, and folders directly on the web interface, keeping you informed about your collection's structure.
+
+- **Easy Server Start**: Start the server with a simple npm script, making it quick and easy to get your streaming platform up and running.
+
+- **Local Development and Deployment**: Designed for local use, this project allows you to host and stream your movie collection from your own computer, ensuring privacy and control over your media.
+
+Enjoy streaming your movie collection with this local OTT platform!
 
 ![Demo](demo.gif)
 

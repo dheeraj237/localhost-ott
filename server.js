@@ -3,12 +3,18 @@ const serveIndex = require('serve-index');
 const path = require("path");
 const fs = require("fs");
 const utils = require("./utils");
+const os = require("os");
 require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 const moviesDirectory = process.env.MOVIES_DIRECTORY;
+
+// get current server / system name like macboo, windows laptop, linux server
+app.get("/server", (req, res) => {
+	res.json({ server: "process.env.SERVER_NAME" });
+});
 
 // static content for all movies
 app.use(
@@ -54,14 +60,13 @@ function listMoviesRecursively(baseDirectory, directory) {
 		}
 	});
 
-	let backDirectory = directoryPath.replace(moviesDirectory, "");
-	backDirectory = path.join(backDirectory, "..");
-
 	return {
-		directory,
+		servingFrom: os.hostname(),
+		directoryPath,
 		files: filesData,
 		directories: directoriesData,
-		back: backDirectory,
+		totalFiles: filesData.length,
+		totalDirectories: directoriesData.length,
 	};
 }
 
