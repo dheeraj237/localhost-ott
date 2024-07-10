@@ -78,3 +78,5 @@ If you encounter any incompatible movie files (e.g., MKV format) that cannot be 
     This script will automatically convert all MKV files in the directory to MP4 format, ensuring compatibility with the streaming platform.
 
 After converting the files, you can restart the server to update the movie list with the newly compatible files.
+
+You can also use - https://oxelon.com/media-converter to convert the files.
