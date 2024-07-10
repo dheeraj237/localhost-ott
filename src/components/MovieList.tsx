@@ -47,7 +47,7 @@ const MoviesList = () => {
 		<div className="p-4">
 			{showBAckButton() && (
 				<div
-					className="bg-gray-200 p-4 rounded-lg shadow-md mb-4 flex items-center"
+					className="cursor-pointer bg-gray-200 p-4 rounded-lg shadow-md mb-4 flex items-center"
 					onClick={() => handleBack()}
 				>
 					<FaArrowLeft className="mr-2" />

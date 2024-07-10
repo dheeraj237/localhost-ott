@@ -9,7 +9,7 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
 	return (
 		<>
 			<div
-				className="bg-gray-200 p-4 rounded-lg shadow-md mb-4"
+				className="bg-gray-200 p-4 rounded-lg shadow-md mb-4 cursor-pointer"
 				onClick={toggleModal}
 			>
 				<h2 className="font-bold">{movie.filename}</h2>

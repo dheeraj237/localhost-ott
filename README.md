@@ -80,3 +80,22 @@ If you encounter any incompatible movie files (e.g., MKV format) that cannot be 
 After converting the files, you can restart the server to update the movie list with the newly compatible files.
 
 You can also use - https://oxelon.com/media-converter to convert the files.
+
+### General FLow:
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Frontend
+    participant Backend
+
+    User->>Browser: Open Homepage
+    Browser->>Frontend: Request Home Page
+    Frontend->>Backend: GET /api/v1/movies
+    Backend-->>Frontend: JSON data with movies list
+    Frontend-->>Browser: Render Home Page with Movies List
+    User->>Browser: Click on Movie Item
+    Browser->>Backend: Request Static Content /stream/{movie}
+    Backend-->>Browser: Serve Movie File
+```

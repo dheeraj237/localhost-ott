@@ -17,7 +17,7 @@ const DirectoryItem = ({
 
 	return (
 		<div
-			className="bg-gray-200 p-4 rounded-lg shadow-md mb-4 flex items-center"
+			className="bg-gray-200 p-4 rounded-lg shadow-md mb-4 flex items-center cursor-pointer"
 			onClick={() => handleItemClick(dir)}
 		>
 			<FaFolder className="mr-2" />

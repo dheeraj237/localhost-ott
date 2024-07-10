@@ -4,11 +4,10 @@ const path = require("path");
 const fs = require("fs");
 const utils = require("./src/utils/common");
 const os = require("os");
-const mime = require("mime");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3008;
 const API_VERSION = process.env.API_VERSION || "v1";
 const API_PREFIX = `/api/${API_VERSION}`;
 
@@ -17,12 +16,7 @@ const moviesDirectory = process.env.MOVIES_DIRECTORY;
 // static content for all movies
 app.use(
 	`${API_PREFIX}/stream`,
-	express.static(moviesDirectory, {
-		setHeaders: (res, filePath) => {
-			const mimeType = mime.getType(filePath);
-			res.setHeader("Content-Type", mimeType);
-		},
-	}),
+	express.static(moviesDirectory),
 	serveIndex(moviesDirectory, { icons: true })
 );
 
