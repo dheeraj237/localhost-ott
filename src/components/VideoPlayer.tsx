@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import ArtPlayerWrapper from "./ArtPlayerWrapper";
+import Artplayer from "artplayer";
 
 interface VideoPlayerProps {
 	path: string;
@@ -27,6 +29,31 @@ export default function VideoPlayer(props: VideoPlayerProps) {
 						className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
 					>
 						<div className="sm:flex sm:items-start">
+							{/* <ArtPlayerWrapper
+								option={{
+									url: props.path,
+									theme: "#ffad00",
+									autoplay: true,
+									setting: true,
+									pip: true,
+									autoSize: true,
+									aspectRatio: true,
+									fullscreen: true,
+									airplay: true,
+									hotkey: true,
+									fastForward: true,
+									lock: true,
+									volume: 0.9,
+								}}
+								style={{
+									minWidth: "400px",
+									minHieght: "200px",
+								}}
+								getInstance={(art: Artplayer) => {
+									art.autoSize();
+									art.autoHeight();
+								}}
+							/> */}
 							<video
 								src={props.path}
 								controls

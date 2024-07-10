@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const utils = require("./src/utils/common");
 const os = require("os");
+const mime = require("mime");
 require("dotenv").config();
 
 const app = express();
@@ -16,17 +17,27 @@ const moviesDirectory = process.env.MOVIES_DIRECTORY;
 // static content for all movies
 app.use(
 	`${API_PREFIX}/stream`,
-	express.static(moviesDirectory),
+	express.static(moviesDirectory, {
+		setHeaders: (res, filePath) => {
+			const mimeType = mime.getType(filePath);
+			res.setHeader("Content-Type", mimeType);
+		},
+	}),
 	serveIndex(moviesDirectory, { icons: true })
 );
 
-// get all moview with json array of objects containing data path, idDirectroy. if not isDirectory the filename, path (remove prefix match with moviesDirectory ), size, created time, modified time
+/**
+ * API to list all the movies in the directory
+ */
 app.get(`${API_PREFIX}/movies`, (req, res) => {
 	const dir = req.query.dir || "";
 	const movieData = listMoviesRecursively(moviesDirectory, dir);
 	res.json(movieData);
 });
 
+/**
+ * get all moview and directories from the provided directory
+ */
 function listMoviesRecursively(baseDirectory, directory) {
 	const directoryPath = baseDirectory + directory || "";
 	const files = fs.readdirSync(directoryPath, { withFileTypes: true });
