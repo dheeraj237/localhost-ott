@@ -46,7 +46,7 @@ function listMoviesRecursively(baseDirectory, directory) {
 		if (file.isDirectory()) {
 			directoriesData.push(filePath.replace(moviesDirectory, ""));
 		} else {
-			if (!/\.(mp4|avi|webm)$/.test(file.name)) {
+			if (!/\.(mp4|avi|webm|mp3)$/.test(file.name)) {
 				return;
 			}
 			const stats = fs.statSync(filePath);

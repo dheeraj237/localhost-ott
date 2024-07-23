@@ -1,7 +1,20 @@
 function getSizeInGB(stats) {
 	const fileSizeInBytes = stats.size;
-	const fileSizeInGB = (fileSizeInBytes / (1024 * 1024 * 1024)).toFixed(2);
-	const size = `${fileSizeInGB} GB`;
+	let size;
+
+	if (fileSizeInBytes >= 1024 * 1024 * 1024) {
+		const fileSizeInGB = (fileSizeInBytes / (1024 * 1024 * 1024)).toFixed(2);
+		size = `${fileSizeInGB} GB`;
+	} else if (fileSizeInBytes >= 1024 * 1024) {
+		const fileSizeInMB = (fileSizeInBytes / (1024 * 1024)).toFixed(2);
+		size = `${fileSizeInMB} MB`;
+	} else if (fileSizeInBytes >= 1024) {
+		const fileSizeInKB = (fileSizeInBytes / 1024).toFixed(2);
+		size = `${fileSizeInKB} KB`;
+	} else {
+		size = `${fileSizeInBytes} bytes`;
+	}
+	
 	return size;
 }
 
